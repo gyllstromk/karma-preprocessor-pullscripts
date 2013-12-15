@@ -1,6 +1,6 @@
 {
   "name": "karma-preprocessor-pullscripts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Karma preprocessor that downloads JS files from <script> tags from html",
   "main": "index.js",
   "dependencies": {
@@ -20,7 +20,8 @@
   },
   "keywords": [
     "karma",
-    "preprocessor",
+    "karma-plugin",
+    "karma-preprocessor",
     "scripts"
   ],
   "author": "Karl Gyllstrom",
