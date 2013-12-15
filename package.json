@@ -1,0 +1,33 @@
+{
+  "name": "karma-preprocessor-pullscripts",
+  "version": "0.0.0",
+  "description": "Karma preprocessor that downloads JS files from <script> tags from html",
+  "main": "index.js",
+  "dependencies": {
+    "request": "~2.30.0",
+    "async": "~0.2.9",
+    "cheerio": "~0.12.4"
+  },
+  "devDependencies": {
+    "mocha": "~1.15.1"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gyllstromk/karma-preprocessor-pullscripts.git"
+  },
+  "keywords": [
+    "karma",
+    "preprocessor",
+    "scripts"
+  ],
+  "author": "Karl Gyllstrom",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "349f96bb5047c05414b1d01556cc2821d5225f56",
+  "bugs": {
+    "url": "https://github.com/gyllstromk/karma-preprocessor-pullscripts/issues"
+  }
+}
