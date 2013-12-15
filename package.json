@@ -20,7 +20,8 @@
   },
   "keywords": [
     "karma",
-    "preprocessor",
+    "karma-plugin",
+    "karma-preprocessor",
     "scripts"
   ],
   "author": "Karl Gyllstrom",
