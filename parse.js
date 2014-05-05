@@ -30,13 +30,19 @@ var process = module.exports = function (config, content, logger, callback) {
                 logger.error('Failed to download', url, err);
                 return callback(err);
             }
-
             callback(null, body);
         });
     }
 
     function getFile(url, callback) {
-        callback(null, fs.readFileSync(url));
+        fs.readFile(url, function(err, data) {
+            if (err) {
+                logger.error('Failed to read', url, err);
+                return callback(err);
+            }
+            callback(null, data);
+        });
+
     }
 
     async.map(urls, function (each, callback) {
@@ -52,7 +58,6 @@ var process = module.exports = function (config, content, logger, callback) {
         }
 
         var s = content.join('\n');
-        fs.writeFileSync('karma.dist.parsed.js', s);
         callback(s);
     });
 
