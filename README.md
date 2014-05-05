@@ -1,15 +1,19 @@
-# Karma-preprocessor-pullscripts: download Javascript from your project's html
+# Karma-preprocessor-pullscripts: read Javascript referred to by your project's html
 
-Tests usually require resources to be loaded, such as jquery and Angular. One can load these as files, but some apps don't keep local copies, and instead download scripts from CDNs, etc.
+Instead of duplicating all your app's Javascript references in your Karma config, just refer to your HTML files, test files and mocks.
 
-This preprocessor lets you load your project's HTML files, from which the files denoted by the `src` field in the `<script>` files are downloaded and included in the test suites.
+Also supports reading external Javascript files via HTTP.
+
+This preprocessor lets you load your project's HTML files, from which the files denoted by the `src` field in the `<script>` files are read or downloaded and included in the test suites.
+
+This is handy for running your tests againts your dist package.
 
 Pros:
 
-1. You do not need to manage local copies of resources using, e.g. bower
-2. Your project's html files are used, meaning you are guaranteed that there is consistency between test and live resources
+1. Your project's html files are used, meaning you are guaranteed that there is consistency between test and live resources
+2. You do not need to manage local copies of resources using, e.g. bower
 
-Cons:
+Cons for case 2:
 
 1. Tests require Internet connectivity
 2. Downloads on each test iteration
@@ -35,6 +39,15 @@ preprocessors: {
     './path/to/*.html': 'pullscripts',
 },
 ```
+
+Configure the file prefix:
+```js
+pullscripts: {
+    // Prefix referenced local file names with this before reading them up.
+    filePrefix: 'dist/'
+},
+```
+
 
 ## Note on order
 
